@@ -18,7 +18,61 @@ class day1{
          for(int i=0;i<arr.size();i++)
         System.out.println(arr.get(i));
     }
+//find min and max
+public static void minandmax(ArrayList<Integer> arr)
+{
+int temp=arr.get(0);
+for(int i=0;i<arr.size();i++)
+{
+    if(temp<arr.get(i))
+    {
+      temp=arr.get(i);
+    }
 
+}
+int temp1=arr.get(0);
+for(int i=0;i<arr.size();i++)
+{
+    if(temp1>arr.get(i))
+    {
+      temp1=arr.get(i);
+    }
+
+}
+//second largest
+int seclarge=0;
+int large=arr.get(0);
+for(int i=0;i<arr.size();i++)
+{
+    if(large<arr.get(i))
+    {
+      seclarge=large;
+      large=arr.get(i);
+    }
+   else if(arr.get(i)>seclarge && arr.get(i)!=large)
+   {
+    seclarge=arr.get(i);
+   }
+}
+int secsmall=0;
+int small=arr.get(0);
+for(int i=0;i<arr.size();i++)
+{
+if(small>arr.get(i))
+{
+    secsmall=small;
+    small=arr.get(i);
+}
+else if(arr.get(i)<secsmall && arr.get(i)!=small)
+{
+    secsmall=arr.get(i);
+}
+}
+System.out.println("Second smallest="+secsmall);
+System.out.println("Second largest="+seclarge);
+System.out.println("Minimum="+temp1);
+System.out.println("Maximum:="+temp);
+}
     public static void main(String args[])
     {
   ArrayList<Integer> arr = new ArrayList<>();
@@ -48,5 +102,15 @@ class day1{
         ArrayList<Integer> arr2= new ArrayList<>();
         arr2.add(12); 
         System.out.println(arr2.isEmpty());
+        ArrayList<Integer> d=new ArrayList<>();
+        d.add(100);
+        d.add(344);
+        d.add(545);
+        d.add(123);
+        d.add(78);
+        d.add(540);
+        d.add(89);
+         minandmax(d);
     }
+   
 }
